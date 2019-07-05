@@ -1,0 +1,231 @@
+<html>
+     <head>
+	 <link href="https://fonts.googleapis.com/css?family=Kranky" rel="stylesheet" type="text/css">
+	  <link href="https://fonts.googleapis.com/css?family=Indie Flower" rel="stylesheet" type="text/css">
+	  	  <link href="https://fonts.googleapis.com/css?family=Patrick Hand" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+           <style>
+		   #background{
+		        background:url('https://cdn.pixabay.com/photo/2017/11/04/03/07/iris-2916348_960_720.jpg');
+				background-size:cover;
+				 background-attachment:fixed;
+		   }
+
+		   #headline{
+		        font-family:Kranky;
+				font-size:140px;
+				margin:0px;
+				color:white;
+		   }
+		   .subhead{
+		          font-family:Kranky;
+				font-size:70px;
+				margin:0px;
+				color:white;
+		   }
+		   .subhead1{
+		          font-family:Indie Flower;
+				font-size:60px;
+				margin:0px;
+				color:white;
+		   }
+     .card {
+              height:500px;
+              box-shadow: 8px 8px 8px 8px rgba(0.6,0.6,0.6,0.3);
+              transition: 0.3s;
+              width: 55%;
+              opacity:0.8px;
+            }
+
+     .card:hover {
+                 box-shadow: 14px 14px 14px 14px rgba(241, 252, 213, 0.9);
+               }
+
+      body {font-family: Arial, Helvetica, sans-serif;}
+        *{box-sizing: border-box;}
+
+        .input-container {
+                  display: -ms-flexbox; /* IE10 */
+                  display: flex;
+                   width: 80%;
+                  margin-bottom: 25px;
+                  }
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+
+
+
+
+			a{
+			  color:black;
+			}
+			#bigbox>a>.box:hover{
+			     background-color:red;
+                  width:150px;
+				   height:300px;
+                    margin:50px 35px 50px 35px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+               border-radius:30%;
+               opacity:1;
+
+			}
+			 h5{
+			     font-family:Patrick Hand;
+				 font-size:30px;
+				 margin:15px;
+			  }
+			@media screen and (max-width:980px)
+			{
+
+			   #background{
+	            background:url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/violet-iris-flower-with-leaves-linda-brody.jpg');
+			   background-size:cover;
+			   background-attachment:fixed;
+			   }
+
+			   .input-container {
+                  display: -ms-flexbox; /* IE10 */
+                  display: flex;
+                   width: 90%;
+                  margin-bottom: 25px;
+                  }
+
+
+
+			  h5{
+			  font-size:25px;
+			  }
+			  .card {
+              height:500px;
+              box-shadow: 8px 8px 8px 8px rgba(0.6,0.6,0.6,0.3);
+              transition: 0.3s;
+              width: 75%;
+              opacity:0.8px;
+            }
+
+			}
+           </style>
+</head>
+      <body id="background">
+
+	       <center>
+		   <h1 id="headline">
+               Iris C-lassifier
+		   </h1>
+
+		<h4 class="subhead">
+		    Machine
+		</h4>
+               <br>
+			<br>
+               <br>
+			<br>
+			<br>
+			<br>
+         <div class="card">
+
+         <br><form action = "{{ url_for('fun1')}}"  method = "POST">
+               <h2 style="font-size:32px;font-family:Roboto;color:white;">Fill Your Flower details</h2><br>
+
+
+
+
+
+     <div class="input-container">
+                   <i class="fa fa-envelope icon"></i>
+                   <input class="form-control input-lg" type="text" placeholder="sepal length in cm" name="p1" required>
+                 </div>
+
+             <div class="input-container">
+                   <i class="fa fa-envelope icon"></i>
+                   <input class="form-control input-lg" type="text" placeholder="sepal width in cm" name="p2" required>
+                 </div>
+
+                <div class="input-container">
+                   <i class="fa fa-envelope icon"></i>
+                   <input class="form-control input-lg" type="text" placeholder="petal length in cm" name="p3" required>
+                 </div>
+
+                   <div class="input-container">
+                   <i class="fa fa-envelope icon"></i>
+                   <input class="form-control input-lg" type="text" placeholder="petal width in cm" name="p4" required>
+                 </div>
+
+                <div class="input-container">
+                    <button type="submit" class="btn btn-success  btn-block" name="btn">CHECK</button>
+                 </div>
+
+
+           </form>
+
+
+			</div>
+               <br>
+			<br>
+			<br>
+			<br>
+			<br>
+					<br>
+					<br>
+               	<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+					<br>
+					<br>
+               	<br>
+			<br>
+			<br>
+			<br>
+               <br>
+			 <h6 class="subhead1">
+			      Iris is the flower of the Greek goddess Iris who is the messenger of Love. ... The word Iris means rainbow.<br>
+					(:-team technical
+
+			 </h6>
+
+			   </center>
+
+
+      </body>
+</html>
