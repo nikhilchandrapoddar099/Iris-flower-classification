@@ -1,10 +1,11 @@
 
 #for mail Extraction online
-from sklearn.datasets import load_iris
+import pickle
 import numpy as np
 from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,20 +24,14 @@ def fun1():
 
       test = np.array([[p1, p2, p3, p4]])
 
-      r = load_iris()
-      x = r["data"]
-      y = r["target"]
+      sc_test = StandardScaler()
+      test= sc_test.fit_transform(test)
 
-      sc_x = StandardScaler()
-      x = sc_x.fit_transform(x)
-      test=sc_x.transform(test)
+      with open('model_pickle', 'rb') as f1:
+         model = pickle.load(f1)
+      pred = model.predict(test)
 
-
-      sv = SVC(random_state=0)
-      sv.fit(x, y)
-      y_pred = sv.predict(test)
-
-      a=int(y_pred[0])
+      a=int(pred[0])
 
       if(a==0):
          d="setosa"
